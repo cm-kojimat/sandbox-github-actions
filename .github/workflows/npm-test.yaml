@@ -9,7 +9,15 @@ on:
       - master
 
 jobs:
-  development:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://github/super-linter:v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
