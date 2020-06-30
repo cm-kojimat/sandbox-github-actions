@@ -1,4 +1,4 @@
 // jest.config.js
-export default {
+module.exports = {
   verbose: true,
 };
