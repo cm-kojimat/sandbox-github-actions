@@ -8,6 +8,8 @@ on:
     branches:
       - master
 
+env:
+  X_HELLO: 123
 jobs:
   development:
     runs-on: ubuntu-latest
@@ -23,3 +25,4 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm ci
       - run: npm test
+      - run: echo ${X_HELLO}
